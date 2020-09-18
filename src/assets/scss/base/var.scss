@@ -1,0 +1,40 @@
+// color
+$theme-color: #fff;
+$mask-color: rgba(#000000,.4);
+
+$default: #409EFF;
+$primary: #67C23A;
+$info: #E6A23C;
+$warning: #F56C6C;
+$danger: #909399;
+
+$primary-text: #303133;
+$regular-text: #606266;
+$secondary-text: #909399;
+$placeholder: #C0C4CC;
+
+$border-base: #DCDFE6;
+$border-light: #E4E7ED;
+$border-lighter: #EBEEF5;
+$border-extralight: #F2F6FC;
+
+$basic-black: #000000;
+$basic-white: #FFFFFF;
+
+// border-radius
+$border-small: 2px;
+$border-big: 4px;
+$border-circle: 50%;
+
+// box-shadow
+$basic-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+$light-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+$header-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+// z-index
+$tabbar-index: 1000;
+$header-index: 1000;
+$navbar-index: 1000;
+$label-index: 900;
+$mask-index: 1100;
+$modal-index: 1200;

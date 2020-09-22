@@ -1,7 +1,6 @@
 <template>
   <div class='city'>
     <section class="section-a">
-      <Navbar />
       <div class="city-info">
         <div class="score">
           城市出游综合得分：<span>4.9</span>
@@ -17,7 +16,7 @@
         
       </div>
       <div class="desc">
-
+        <p>北京是一座有着三千多年历史的古都，在不同的朝代有着不同的称谓，大致算起来有二十多个别称。<br/>燕都，据史书记载...</p>
       </div>
       <div class="hot-scenes">
         <div class="title">热门景点</div>
@@ -29,13 +28,8 @@
 </template>
 
 <script>
-import Navbar from '../../components/common/navbar'
-
 export default {
   name: "city",
-  components: {
-    Navbar
-  },
   methods: {
     toDetailPage() {
       this.$router.push({

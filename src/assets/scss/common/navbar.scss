@@ -2,10 +2,10 @@
 
 .navbar {
   position: absolute;
+  z-index: 10000;
   top: 30px;
-  left: 50%;
-  margin-left: -45%;
-  width: 90%;
+  width: 60%;
+  left: 50px;
   display: flex;
   justify-content: space-between;
 

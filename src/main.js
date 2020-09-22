@@ -5,6 +5,7 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/scss/base/index.scss'
+// import VueAMap from 'vue-amap';
 import echarts from 'echarts'
 // import 'echarts/map/js/china'
 
@@ -16,6 +17,7 @@ Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+// Vue.use(VueAMap)
 
 new Vue({
   router,

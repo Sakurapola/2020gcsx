@@ -1,12 +1,40 @@
 import axios from 'axios'
+import { serverBaseUrl } from '@/config'
 
-/* 疫情数据 */
-export const getEpidemic = () => {
+axios.baseUrl = serverBaseUrl
+
+/* 热门列表 */
+export const getHotList = param => {
   return axios({
-    url: '../assets/data/data.json',
+    url: '/api/hotlist',
     method: 'get',
-    dataType: "json",
-    crossDomain: true,
-    cache: false
+    param
+  })
+}
+
+/* 城市详情 */
+export const getCityDetail = param => {
+  return axios({
+    url: '/api/cityDetail',
+    method: 'get',
+    param
+  })
+}
+
+/* 景点 */
+export const getSceneDetail = param => {
+  return axios({
+    url: '/api/sceneDetail',
+    method: 'get',
+    param
+  })
+}
+
+/* 热门列表 */
+export const getFoods = param => {
+  return axios({
+    url: '/api/foods',
+    method: 'get',
+    param
   })
 }

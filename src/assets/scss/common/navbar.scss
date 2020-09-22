@@ -1,70 +1,46 @@
 @import '../base/mixins.scss';
 
 .navbar {
-  width: 42vw;
-  @include flex-center();
-  box-sizing: border-box;
-  font-family: '黑体';
-  padding-right: 20px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 
-  .ul {
-    width: 100%;
-    margin-top: 30px;
-    height: 60px;
-    @include flex-space-around();
-    font-size: 20px;
-
-    &-li, .btn {
-      position: relative;
-      height: 100%;
-      width: 100px;
-      @include flex-center();
-      border-bottom: 7px solid rgba(0, 0, 0, 0);
-      cursor: pointer;
-      color: #fff;
-
-      &-ul {
-        position: absolute;
-        top: 60px;
-        width: 100px;
-        @include flex-center(column);
-        visibility : hidden;
-        font-size: 18px;
-        padding-top: 15px;
-
-        &-li {
-          height: 50px;
-          line-height: 50px;
-        }
-
-        &-li:hover {
-          color: yellow;
-        }
-      }
-    }
-
-    &-li:hover {
-      border-bottom: 7px solid #fff;
-    }
-
-    &-li:hover .ul-li-ul {
-      visibility: visible;
-    }
-
-    .btn {
-      position: relative;
-      top: -4px;
-      width: 80px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 15px;
+  .navs {
+    display: flex;
+  
+    li {
+      width: 90px;
+      height: 40px;
+      box-sizing: border-box;
       background-color: #fff;
-      border-bottom: 0;
-      color: #000;
+      border-left: 1px solid rgb(167, 166, 252);
+      border-top: 1px solid rgb(167, 166, 252);
+      border-bottom: 1px solid rgb(167, 166, 252);
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+  
+    li:first-child {
+      border-radius: 7px 0 0 7px;
+    }
+  
+    li:last-child {
+      border-radius: 0 7px 7px 0;
+      border-right: 1px solid rgb(167, 166, 252);
     }
 
-    .btn:hover {
-
+    .active {
+      color: #fff;
+      background-color: rgb(130, 128, 255);
     }
+  }
+  
+  .search {
+    width: 400px;
   }
 }

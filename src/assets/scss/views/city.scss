@@ -1,0 +1,83 @@
+@import '../base/mixins.scss';
+
+.city {
+  display: flex;
+
+  .section-a {
+    position: relative;
+    flex: 5 0;
+    min-height: 100vh;
+    background-color: rgb(255, 206, 206);
+
+    .city-info {
+      position: absolute;
+      width: 90%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, .6);
+      bottom: 20px;
+      left: 50%;
+      margin-left: -45%;
+      padding: 0 20px;
+
+      .score {
+        height: 55px;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        border-bottom: 1px solid rgb(226, 226, 226);
+      }
+
+      .notice {
+        height: 55px;
+        display: flex;
+        align-items: center;
+      }
+
+      span {
+        color: #f00;
+      }
+    }
+  }
+
+  .section-b {
+    flex: 2 0;
+    min-height: 100vh;
+    background-color: rgb(173, 255, 228);
+    box-shadow: 0 0 10px rgb(128, 128, 128);
+    padding: 20px;
+
+    .city-name {
+      height: 40px;
+      background-color: rgb(255, 213, 176);
+      text-align: right;
+      line-height: 40px;
+      font-size: 20px;
+      padding-right: 20px;
+      font-weight: bold;
+    }
+
+    .words-cloud {
+      height: 30vh;
+      background-color: rgb(255, 200, 232);
+    }
+
+    .desc {
+      height: 25vh;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .hot-scenes {
+      height: 30vh;
+      background-color: rgb(255, 211, 161);
+
+      .title {
+        line-height: 30px;
+      }
+    }
+
+    .nav {
+      color: rgb(47, 97, 189);
+      margin-top: 10px;
+    }
+  }
+}

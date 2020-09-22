@@ -1,51 +1,48 @@
 <template>
   <nav class='navbar'>
-    <ul class='ul'>
-      <li class='ul-li'>
-        个人展示
-        <ul class='ul-li-ul'>
-          <li class='ul-li-ul-li' @click="toPesonalPage('long')">胡健龙</li>
-          <li class='ul-li-ul-li' @click="toPesonalPage('feng')">袁乾峰</li>
-          <li class='ul-li-ul-li' @click="toPesonalPage('xingyu')">陈星羽</li>
-          <li class='ul-li-ul-li' @click="toPesonalPage('yun')">张凤云</li>
-          <li class='ul-li-ul-li' @click="toPesonalPage('caiyu')">李才宇</li>
-        </ul>
-      </li>
-      <li class='ul-li'>
-        可视化
-        <ul class='ul-li-ul'>
-          <li class='ul-li-ul-li' @click="toPage('sort')">排序算法</li>
-          <li class='ul-li-ul-li' @click="openPage('hanota')">汉诺塔</li>
-          <li class='ul-li-ul-li' @click="toPage('stack-queue')">栈 / 队列</li>
-          <li class='ul-li-ul-li' @click="toPage('linklist')">链表</li>
-        </ul>
-      </li>
-      <li class='ul-li' @click="toPage('epidemic')">疫情大数据</li>
-      <div class='btn' @click="toPage('index')">首页</div>
+    <ul class="navs">
+      <li :class="{active: activeStatus === 1}" @click="toPage('city'); activeStatus = 1">城市</li>
+      <li :class="{active: activeStatus === 2}" @click="toPage('scene'); activeStatus = 2">景点</li>
+      <li :class="{active: activeStatus === 3}" @click="toPage('food'); activeStatus = 3">区域</li>
     </ul>
+    <div class="search">
+      <el-input 
+        placeholder="请输入您想去的城市......" 
+        v-model="city" 
+        class="input-with-select"
+      >
+        <el-button slot="append" icon="el-icon-search"  @click="toCityDetailPage()"></el-button>
+      </el-input>
+    </div>
   </nav>
 </template>
 
 <script>
-export default {
-  name: "navbar",
-  methods: {
-    toPesonalPage (name) {
-      this.$router.push({
-        path: `/personal/${name}`
-      })
-      // this.$store.dispatch('setRouterState', name)
+  export default {
+    name: "navbar",
+    data() {
+      return {
+        activeStatus: 1,
+        city: ''
+      }
     },
-    toPage(name) {
-      this.$router.push({
-        name
-      })
-    },
-    openPage(param) {
-      location.href =`http://fengblog.xyz/experiments/${param}.html`
+    methods: {
+      toPesonalPage (name) {
+        this.$router.push({
+          path: `/personal/${name}`
+        })
+        // this.$store.dispatch('setRouterState', name)
+      },
+      toPage(name) {
+        this.$router.push({
+          name
+        })
+      },
+      openPage(param) {
+        location.href =`http://fengblog.xyz/experiments/${param}.html`
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

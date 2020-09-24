@@ -57,12 +57,12 @@
     }
 
     .words-cloud {
-      height: 30vh;
+      height: 32%;
       background-color: rgb(255, 200, 232);
     }
 
     .desc {
-      height: 25vh;
+      height: 26%;
       background-color: rgb(255, 255, 255);
 
       p {
@@ -71,17 +71,19 @@
     }
 
     .hot-scenes {
-      height: 30vh;
+      height: 32%;
       background-color: rgb(255, 211, 161);
 
       .title {
         line-height: 30px;
+        font-weight: bold;
       }
     }
 
     .nav {
       color: rgb(47, 97, 189);
       margin-top: 10px;
+      cursor: pointer;
     }
   }
 }

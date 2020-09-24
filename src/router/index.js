@@ -30,14 +30,19 @@ const routes = [
     component: () => import('../views/city/detail')
   },
   {
+    path: '/area',
+    name: 'area',
+    component: () => import('../views/area')
+  },
+  {
+    path: '/area/detail',
+    name: 'area_detail',
+    component: () => import('../views/area/detail')
+  },
+  {
     path: '/food',
     name: 'food',
     component: () => import('../views/food')
-  },
-  {
-    path: '/food/detail',
-    name: 'food_detail',
-    component: () => import('../views/food/detail')
   },
 ]
 

@@ -22,7 +22,7 @@
         <div class="title">热门景点</div>
         
       </div>
-      <div class="nav">去看看有什么美食&gt;&gt;</div>
+      <div class="nav" @click="toFoodPage">去看看有什么美食&gt;&gt;</div>
     </section>
   </div>
 </template>
@@ -31,9 +31,9 @@
 export default {
   name: "city",
   methods: {
-    toDetailPage() {
+    toFoodPage() {
       this.$router.push({
-        name: 'city_detail'
+        name: 'food'
       })
     }
   }

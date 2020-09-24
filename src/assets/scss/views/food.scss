@@ -1,0 +1,108 @@
+@import '../base/mixins.scss';
+@import '../base/var.scss';
+
+.food {
+  display: flex;
+  padding-top: 100px;
+
+  .section-a {
+    flex: 2 0;
+    height: calc(100vh - 100px);
+    background-color: rgb(173, 255, 228);
+    padding: 20px;
+
+
+    .words-cloud {
+      height: 55%;
+      background-color: rgb(255, 200, 232);
+
+      .title {
+        line-height: 40px;
+        color: #7E7E7E;
+        font-weight: bold;
+      }
+    }
+
+    .hot-scenes {
+      height: 45%;
+      background-color: rgb(255, 211, 161);
+
+      .title {
+        line-height: 40px;
+        color: #7E7E7E;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .section-b {
+    position: relative;
+    flex: 5 0;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    border-top: 1px solid rgb(235, 235, 235);
+    // background-color: rgb(255, 206, 206);
+
+    .foods {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .food-item {
+        margin-bottom: 20px;
+        height: 200px;
+        background-color: #fff;
+        box-shadow: 0 0 3px rgb(192, 192, 192);
+        border-radius: 2px;
+        padding: 15px;
+        display: flex;
+
+        .el-image {
+          width: 300px;
+          height: 170px;
+        }
+
+        .content {
+          flex: 1;
+          margin-left: 20px;
+
+          .title-city {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .title {
+              font-size: 23px;
+              font-weight: bold;
+            }
+
+            .city {
+              font-size: 20px;
+              font-weight: bold;
+              color: #878787;
+              cursor: pointer;
+
+              span {
+                color: #5C94F6;
+              }
+            }
+          }
+
+          .para {
+            color: #787878;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .food-item:hover {
+        box-shadow: 0 0 15px rgb(192, 192, 192);
+        transition: all .5s;
+      }
+
+      .food-item:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

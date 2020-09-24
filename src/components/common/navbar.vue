@@ -3,7 +3,7 @@
     <ul class="navs">
       <li :class="{active: activeStatus === 1}" @click="toPage('city'); activeStatus = 1">城市</li>
       <li :class="{active: activeStatus === 2}" @click="toPage('scene'); activeStatus = 2">景点</li>
-      <li :class="{active: activeStatus === 3}" @click="toPage('food'); activeStatus = 3">区域</li>
+      <li :class="{active: activeStatus === 3}" @click="toPage('area'); activeStatus = 3">区域</li>
     </ul>
     <div class="search">
       <el-input 

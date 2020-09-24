@@ -1,39 +1,42 @@
 <template>
-  <div class='area'>
+  <div class='food'>
     <section class="section-a">
-      <div class="city-info">
-        <div class="score">
-          城市出游综合得分：<span>4.9</span>
-        </div>
-        <div class="notice">
-          <span>* </span>预计十一期间该地区游客较多，可能影响您的出行体验
-        </div>
+      <div class="words-cloud">
+        <div class="title">热门城市美食数量</div>
+        
+      </div>
+      <div class="hot-scenes">
+        <div class="title">北京的美食</div>
+        
       </div>
     </section>
     <section class="section-b">
-      <div class="city-name">北京</div>
-      <div class="words-cloud">
-        
-      </div>
-      <div class="desc">
-        <p>北京是一座有着三千多年历史的古都，在不同的朝代有着不同的称谓，大致算起来有二十多个别称。<br/>燕都，据史书记载...</p>
-      </div>
-      <div class="hot-scenes">
-        <div class="title">热门景点</div>
-        
-      </div>
-      <div class="nav">去看看有什么美食&gt;&gt;</div>
+      <ul class="foods">
+        <li class="food-item" v-for="item in 10" :key="item">
+          <el-image
+          src="https://www.wulihub.com.cn/go/JP3ZDM/images/%E6%90%9C%E7%B4%A2%E7%BE%8E%E9%A3%9F/u127.png"
+          fit="cover"></el-image>
+          <div class="content">
+            <div class="title-city">
+              <div class="title">北京烤鸭</div>
+              <div class="city">去 <span @click="toCityPage">北京</span> 吃</div>
+            </div>
+            <div class="para">烤鸭是在世界上都享有盛名的北京知名菜式，只选用优质北京肉鸭，用带有天然香气的木材烤制，鸭皮色泽透润，肉质肥而不腻，外焦里嫩，令人入口难忘，口齿留香。细分的北京烤鸭又分为挂炉烤鸭和焖炉烤鸭，如今较多的店采用挂炉烤鸭制法。</div>
+          </div>
+        </li>
+      </ul>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: "area",
+  name: "food",
   methods: {
-    toDetailPage() {
+    toCityPage() {
       this.$router.push({
-        name: 'city_detail'
+        name: 'city',
+        params: { city: this.city }
       })
     }
   }
@@ -42,5 +45,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  @import '../../assets/scss/views/area.scss';
+  @import '../../assets/scss/views/food.scss';
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class='area'>
+    <div class="placeholder"></div>
     <div class="heat-map">
 
     </div>

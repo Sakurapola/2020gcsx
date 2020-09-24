@@ -4,16 +4,17 @@
   display: flex;
 
   .section-a {
+    padding-top: 80px;
     position: relative;
     flex: 5 0;
     min-height: 100vh;
-    background-color: rgb(255, 206, 206);
 
     .city-info {
       position: absolute;
       width: 90%;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, .6);
+      background-color: rgba(255, 255, 255);
+      box-shadow: $basic-shadow;
       bottom: 20px;
       left: 50%;
       margin-left: -45%;

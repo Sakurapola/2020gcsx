@@ -2,6 +2,11 @@
 
 .area {
 
+  .placeholder {
+    height: 80px;
+    background-color: #fff;
+  }
+
   .heat-map {
     min-height: 100vh;
     background-color: rgb(255, 204, 204);
@@ -10,13 +15,15 @@
   .operates {
     position: absolute;
     width: 200px;
-    top: 120px;
-    left: 50px;
+    top: 150px;
+    left: 95px;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    box-shadow: $basic-shadow;
+    border-radius: 2px;
 
     .el-button {
       width: 150px;
@@ -34,6 +41,8 @@
     background-color: rgba(255, 255, 255, .5);
     transition: all 1s;
     padding: 15px;
+    box-shadow: $basic-shadow;
+    border-radius: 2px;
 
     .title {
       font-size: 18px;

@@ -4,16 +4,17 @@
   display: flex;
 
   .section-a {
+    padding-top: 80px;
     position: relative;
     flex: 5 0;
     min-height: 100vh;
-    background-color: rgb(255, 206, 206);
 
     .city-info {
       position: absolute;
       width: 90%;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, .6);
+      background-color: rgba(255, 255, 255);
+      box-shadow: $basic-shadow;
       bottom: 20px;
       left: 50%;
       margin-left: -45%;
@@ -42,13 +43,11 @@
   .section-b {
     flex: 2 0;
     min-height: 100vh;
-    background-color: rgb(173, 255, 228);
-    box-shadow: 0 0 10px rgb(128, 128, 128);
     padding: 20px;
 
     .city-name {
       height: 40px;
-      background-color: rgb(255, 213, 176);
+      background-color: rgb(200, 196, 255);
       text-align: right;
       line-height: 40px;
       font-size: 20px;
@@ -63,7 +62,7 @@
 
     .desc {
       height: 26%;
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(196, 255, 209);
 
       p {
         color: #838383;

@@ -3,13 +3,15 @@
 
 .food {
   display: flex;
-  padding-top: 100px;
+  padding-top: 80px;
 
   .section-a {
     flex: 2 0;
     height: calc(100vh - 100px);
-    background-color: rgb(173, 255, 228);
+    // background-color: rgb(173, 255, 228);
     padding: 20px;
+    border-top: 1px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(235, 235, 235);
 
 
     .words-cloud {

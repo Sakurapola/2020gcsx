@@ -1,6 +1,17 @@
 <template>
   <div class='scene'>
     <section class="section-a">
+      <el-amap 
+        ref="map" 
+        vid="amapDemo" 
+        :amap-manager="amapManager" 
+        :center="center" 
+        :zoom="zoom" 
+        :plugin="plugin" 
+        :events="events" 
+        class="amap-demo"
+      >
+      </el-amap>
       <div class="city-info">
         <div class="score">
           景点综合得分：<span>4.9</span>
@@ -35,8 +46,43 @@
 </template>
 
 <script>
+import VueAMap from 'vue-amap'
+let amapManager = new VueAMap.AMapManager()
+
 export default {
   name: "scene",
+  data() {
+    return {
+      amapManager,
+      zoom: 12,
+      center: [121.59996, 31.197646],
+      events: {
+        init: (o) => {
+          console.log(o.getCenter())
+          console.log(this.$refs.map.$$getInstance())
+          o.getCity(result => {
+            console.log(result)
+          })
+        },
+        'moveend': () => {
+        },
+        'zoomchange': () => {
+        },
+        'click': (e) => {
+          alert('map clicked')
+        }
+      },
+      plugin: ['ToolBar', {
+        pName: 'MapType',
+        defaultType: 0,
+        events: {
+          init(o) {
+            console.log(o)
+          }
+        }
+      }]
+    }
+  },
   methods: {
     toDetailPage() {
       this.$router.push({

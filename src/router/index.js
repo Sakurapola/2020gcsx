@@ -15,29 +15,14 @@ const routes = [
     component: () => import('../views/scene')
   },
   {
-    path: '/scene/detail',
-    name: 'scene_detail',
-    component: () => import('../views/scene/detail')
-  },
-  {
     path: '/city',
     name: 'city',
     component: () => import('../views/city')
   },
   {
-    path: '/city/detail',
-    name: 'city_detail',
-    component: () => import('../views/city/detail')
-  },
-  {
     path: '/area',
     name: 'area',
     component: () => import('../views/area')
-  },
-  {
-    path: '/area/detail',
-    name: 'area_detail',
-    component: () => import('../views/area/detail')
   },
   {
     path: '/food',

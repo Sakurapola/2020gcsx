@@ -7,7 +7,7 @@
     padding-top: 80px;
     position: relative;
     flex: 5 0;
-    min-height: 100vh;
+    height: 100vh;
 
     .city-info {
       position: absolute;
@@ -42,12 +42,12 @@
 
   .section-b {
     flex: 2 0;
-    min-height: 100vh;
+    height: 100vh;
     padding: 20px;
+    overflow: scroll;
 
     .city-name {
       height: 40px;
-      background-color: rgb(200, 196, 255);
       text-align: right;
       line-height: 40px;
       font-size: 20px;
@@ -56,13 +56,22 @@
     }
 
     .words-cloud {
-      height: 32%;
-      background-color: rgb(255, 200, 232);
+      margin-top: 20px;
+      min-height: 32%;
+      background-color: rgb(253, 220, 220);
     }
 
     .desc {
-      height: 26%;
-      background-color: rgb(196, 255, 209);
+      min-height: 10%;
+      padding: 8px 0;
+      font-size: 14px;
+      line-height: 25px;
+
+      .title {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: bold;
+      }
 
       p {
         color: #838383;
@@ -70,8 +79,7 @@
     }
 
     .hot-scenes {
-      height: 32%;
-      background-color: rgb(255, 211, 161);
+      min-height: 32%;
 
       .title {
         line-height: 30px;
@@ -81,7 +89,6 @@
 
     .nav {
       color: rgb(47, 97, 189);
-      margin-top: 10px;
       cursor: pointer;
     }
   }

@@ -42,10 +42,10 @@
 
   .section-b {
     flex: 2 0;
-    min-height: 100vh;
-    // background-color: rgb(173, 255, 228);
+    height: 100vh;
     box-shadow: 0 0 10px rgb(128, 128, 128);
     padding: 20px;
+    overflow: scroll;
 
     .scene-info {
       // background-color: rgb(255, 213, 176);
@@ -67,7 +67,6 @@
   
           .scene {
             font-weight: bold;
-            // background-color: slateblue;
           }
   
           .city {
@@ -87,6 +86,14 @@
         width: 100%;
         padding: 15px 0 5px;
         color: #838383;
+        font-size: 14px;
+
+        .title {
+          color: #000;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 30px;
+        }
       }
 
       .open-time {
@@ -97,25 +104,24 @@
     }
 
     .scene-praise-rate {
-      height: 35%;
-      background-color: rgb(255, 255, 255);
+      min-height: 35%;
       margin-top: 15px;
-      background-color: rgb(189, 222, 255);
 
       .title {
         line-height: 30px;
         font-weight: bold;
+        margin-bottom: 20px;
       }
     }
 
     .fare-rank {
-      height: 28%;
-      background-color: rgb(255, 226, 193);
+      min-height: 28%;
       margin-top: 15px;
 
       .title {
         line-height: 30px;
         font-weight: bold;
+        margin-bottom: 20px;
       }
     }
 

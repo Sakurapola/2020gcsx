@@ -20,7 +20,9 @@ export default {
     toCityPage() {
       this.$router.push({
         name: 'city',
-        params: { city: this.city }
+        params: {
+          city: this.city 
+        }
       })
     }
   }

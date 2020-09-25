@@ -12,6 +12,15 @@ module.exports = {
     port: 8080, // 端口号
     https: false,
     hotOnly: false, // 配置跨域处理,只有一个代理
-    before: app => {}
+    before: app => {},
+    proxy: {
+      '/map': {
+        target: 'http://api.map.baidu.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/map': ''
+        }
+      }
+    }
   }
 }

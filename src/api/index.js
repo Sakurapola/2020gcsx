@@ -1,40 +1,40 @@
 import axios from 'axios'
 import { serverBaseUrl } from '@/config'
 
-axios.baseUrl = serverBaseUrl
+axios.defaults.baseURL = serverBaseUrl
 
 /* 热门列表 */
-export const getHotList = param => {
+export const getHotList = params => {
   return axios({
-    url: '/api/hotlist',
+    url: '/hotList',
     method: 'get',
-    param
+    params
   })
 }
 
 /* 城市详情 */
-export const getCityDetail = param => {
+export const getCityDetail = params => {
   return axios({
-    url: '/api/cityDetail',
+    url: '/cityDetail',
     method: 'get',
-    param
+    params
   })
 }
 
 /* 景点 */
-export const getSceneDetail = param => {
+export const getSceneDetail = params => {
   return axios({
-    url: '/api/sceneDetail',
+    url: '/sceneDetail',
     method: 'get',
-    param
+    params
   })
 }
 
 /* 热门列表 */
-export const getFoods = param => {
+export const getFoods = params => {
   return axios({
-    url: '/api/foods',
+    url: '/foods',
     method: 'get',
-    param
+    params
   })
 }

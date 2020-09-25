@@ -45,7 +45,6 @@
 
 <script>
 import VueAMap from 'vue-amap'
-let amapManager = new VueAMap.AMapManager()
 
 import { getCityDetail, getHotList } from '@/api'
 import { getLocationByCityName } from '@/api/map-api'
@@ -61,7 +60,7 @@ export default {
       }
     }
     return {
-      amapManager,
+      amapManager: null,
       zoom: 10,
       center: [116.512885, 39.84746],
       events: {
@@ -120,6 +119,10 @@ export default {
       type: 'scene',
       cityName: this.$route.params.city || '北京'
     })).data.data
+  },
+  mounted() {
+    this.center = [116.512885, 39.84746]
+    this.amapManager = new VueAMap.AMapManager()
   }
   // async created() {
   //   let city = this.$route.params.city || '北京'

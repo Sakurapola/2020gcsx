@@ -50,7 +50,6 @@
 
 <script>
 import VueAMap from 'vue-amap'
-let amapManager = new VueAMap.AMapManager()
 
 import { sceneRankList } from '@/assets/js/data'
 import { getSceneDetail } from '@/api'
@@ -66,9 +65,9 @@ export default {
       }
     }
     return {
-      amapManager,
+      amapManager: null,
       zoom: 12,
-      center: [121.59996, 31.197646],
+      center: [],
       events: {
         init: (o) => {
           console.log(o.getCenter())
@@ -125,6 +124,9 @@ export default {
 
     this.circleChartData.rows[0]['数量'] = this.sceneDetail.hotwords[2][1]
     this.circleChartData.rows[1]['数量'] = this.sceneDetail.hotwords[0][1] + this.sceneDetail.hotwords[1][1]
+
+    this.center = [121.59996, 31.197646]
+    this.amapManager = new VueAMap.AMapManager()
   }
 }
 </script>

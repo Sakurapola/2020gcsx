@@ -11,7 +11,7 @@
         v-model="city" 
         class="input-with-select"
       >
-        <el-button slot="append" icon="el-icon-search"  @click="toCityDetailPage()"></el-button>
+        <el-button slot="append" icon="el-icon-search"  @click="toCityPage(); activeStatus = 1"></el-button>
       </el-input>
     </div>
   </nav>
@@ -27,19 +27,18 @@
       }
     },
     methods: {
-      toPesonalPage (name) {
-        this.$router.push({
-          path: `/personal/${name}`
-        })
-        // this.$store.dispatch('setRouterState', name)
-      },
       toPage(name) {
         this.$router.push({
           name
         })
       },
-      openPage(param) {
-        location.href =`http://fengblog.xyz/experiments/${param}.html`
+      toCityPage() {
+        this.$router.push({
+          name: 'city',
+          params: {
+            city: this.city
+          }
+        })
       }
     }
   }

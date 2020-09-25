@@ -17,7 +17,7 @@
           景点综合得分：<span>{{(sceneDetail.heat * 100).toString().slice(0, 4)}}</span>
         </div>
         <div class="notice">
-          <span>* </span>{{sceneDetail.note.slice(0, sceneDetail.note.indexOf('。') + 1)}}
+          <span>* </span>{{sceneDetail.note.slice(0, 50)}}
         </div>
       </div>
     </section>
@@ -38,7 +38,7 @@
       </div>
       <div class="scene-praise-rate">
         <div class="title">景点好评率</div>
-        <ve-ring :data="circleChartData"></ve-ring>
+        <ve-gauge :data="circleChartData" :settings="chartSettings1"></ve-gauge>
       </div>
       <div class="fare-rank">
         <div class="title">城市热门景点票价排行</div>
@@ -62,6 +62,17 @@ export default {
       dataOrder: {
         label: 'price',
         order: 'desc'
+      }
+    }
+    this.chartSettings1 = {
+      dataType: {
+        '占比': 'percent'
+      },
+      seriesMap: {
+        '占比': {
+          min: 0,
+          max: 1
+        }
       }
     }
     return {
@@ -94,10 +105,12 @@ export default {
         }
       }],
       circleChartData: {
-        columns: ['类型', '数量'],
+        columns: ['type', 'value'],
         rows: [
-          { '类型': '好评', '数量': 67 },
-          { '类型': '其他', '数量': 33 },
+          { 
+            type: '占比', 
+            value: 0
+          },
         ]
       },
       barChartData: {
@@ -118,12 +131,11 @@ export default {
     this.barChartData.rows = sceneRankList[this.$route.params.city || '北京']
 
     this.sceneDetail = (await getSceneDetail({
-      sceneName: '八达岭长城',
+      sceneName: '故宫',
       cityName: this.$route.params.city || '北京'
     })).data
 
-    this.circleChartData.rows[0]['数量'] = this.sceneDetail.hotwords[2][1]
-    this.circleChartData.rows[1]['数量'] = this.sceneDetail.hotwords[0][1] + this.sceneDetail.hotwords[1][1]
+    this.circleChartData.rows[0]['value'] = this.sceneDetail.hotwords[2][1] / (this.sceneDetail.hotwords[0][1] + this.sceneDetail.hotwords[1][1] + this.sceneDetail.hotwords[2][1])
 
     this.center = [121.59996, 31.197646]
     this.amapManager = new VueAMap.AMapManager()
@@ -131,7 +143,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   @import '../../assets/scss/views/scene.scss';
 </style>

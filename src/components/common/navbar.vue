@@ -7,11 +7,20 @@
     </ul>
     <div class="search">
       <el-input 
+        v-if="activeStatus === 2"
+        placeholder="请输入您想去的景点......" 
+        v-model="scene" 
+        class="input-with-select"
+      >
+        <el-button slot="append" icon="el-icon-search"  @click="queryScene"></el-button>
+      </el-input>
+      <el-input 
+        v-else
         placeholder="请输入您想去的城市......" 
         v-model="city" 
         class="input-with-select"
       >
-        <el-button slot="append" icon="el-icon-search"  @click="toCityPage(); activeStatus = 1"></el-button>
+        <el-button slot="append" icon="el-icon-search"  @click="queryCity"></el-button>
       </el-input>
     </div>
   </nav>
@@ -23,7 +32,8 @@
     data() {
       return {
         activeStatus: 1,
-        city: ''
+        city: '',
+        scene: ''
       }
     },
     methods: {
@@ -32,13 +42,11 @@
           name
         })
       },
-      toCityPage() {
-        this.$router.push({
-          name: 'city',
-          params: {
-            city: this.city
-          }
-        })
+      queryCity() {
+        
+      },
+      queryScene() {
+
       }
     }
   }

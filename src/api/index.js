@@ -33,7 +33,7 @@ export const getSceneDetail = params => {
 /* 热门列表 */
 export const getFoods = params => {
   return axios({
-    url: '/foods',
+    url: '/foodDetail',
     method: 'get',
     params
   })

@@ -2,26 +2,26 @@
   <div class='food'>
     <section class="section-a">
       <div class="words-cloud">
-        <div class="title">热门城市美食数量</div>
-        
+        <div class="title">城市美食好评率</div>
+        <ve-pie :data="chartData" :settings="chartSettings"></ve-pie>
       </div>
       <div class="hot-scenes">
-        <div class="title">北京的美食</div>
-        
+        <div class="title">城市热门美食</div>
+        <ve-bar :data="chartData1"></ve-bar>
       </div>
     </section>
     <section class="section-b">
       <ul class="foods">
-        <li class="food-item" v-for="item in 10" :key="item">
+        <li class="food-item" v-for="item in foodList" :key="item.fname">
           <el-image
-          src="https://www.wulihub.com.cn/go/JP3ZDM/images/%E6%90%9C%E7%B4%A2%E7%BE%8E%E9%A3%9F/u127.png"
+          :src="item.fimg"
           fit="cover"></el-image>
           <div class="content">
             <div class="title-city">
-              <div class="title">北京烤鸭</div>
+              <div class="title">{{item.fname}}</div>
               <div class="city">去 <span @click="toCityPage">北京</span> 吃</div>
             </div>
-            <div class="para">烤鸭是在世界上都享有盛名的北京知名菜式，只选用优质北京肉鸭，用带有天然香气的木材烤制，鸭皮色泽透润，肉质肥而不腻，外焦里嫩，令人入口难忘，口齿留香。细分的北京烤鸭又分为挂炉烤鸭和焖炉烤鸭，如今较多的店采用挂炉烤鸭制法。</div>
+            <div class="para">{{item.fdesc}}</div>
           </div>
         </li>
       </ul>
@@ -30,8 +30,30 @@
 </template>
 
 <script>
+import { getFoods } from '@/api'
+
 export default {
   name: "food",
+  data () {
+    this.chartSettings = {
+      roseType: 'radius'
+    }
+    return {
+      chartData: {
+        columns: ['type', 'rate'],
+        rows: [
+          { 'type': '好评', 'rate': 0.632 },
+          { 'type': '中评', 'rate': 0.213 },
+          { 'type': '差评', 'rate': 0.155 },
+        ]
+      },
+      chartData1: {
+        columns: ['name', 'hot'],
+        rows: []
+      },
+      foodList: []
+    }
+  },
   methods: {
     toCityPage() {
       this.$router.push({
@@ -39,6 +61,19 @@ export default {
         params: { city: this.city }
       })
     }
+  },
+  async mounted() {
+    this.foodList = (await getFoods({
+      cityName: '北京',
+      hot: true
+    })).data.foodlist
+
+    this.chartData1.rows = (this.foodList.map(item => {
+      return {
+        name: item.fname,
+        hot: item.fhot
+      }
+    })).reverse()
   }
 }
 </script>

@@ -8,8 +8,8 @@
   }
 
   .heat-map {
-    min-height: 100vh;
-    background-color: rgb(255, 204, 204);
+    width: 100vw;
+    height: 88vh;
   }
 
   .operates {
@@ -45,6 +45,7 @@
     border-radius: 2px;
 
     .title {
+      margin-bottom: 30px;
       font-size: 18px;
       font-weight: bold;
       color: #555555;

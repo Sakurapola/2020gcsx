@@ -5,18 +5,27 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    routerState: ''
+    cityName: '',
+    sceneName: ''
   },
   mutations: {
-    ['routerState'](state, data) {
-      state.routerState = data
+    ['cityName'](state, data) {
+      state.cityName = data
+    },
+    ['sceneName'](state, data) {
+      state.sceneName = data
     }
   },
   actions: {
-    setRouterState({
+    setCityName({
       commit
     }, data) {
-      commit('routerState', data)
+      commit('setCityName', data)
+    },
+    setSceneName({
+      commit
+    }, data) {
+      commit('setSceneName', data)
     }
   }
 })

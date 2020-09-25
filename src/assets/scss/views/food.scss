@@ -8,31 +8,29 @@
   .section-a {
     flex: 2 0;
     height: calc(100vh - 100px);
-    // background-color: rgb(173, 255, 228);
     padding: 20px;
     border-top: 1px solid rgb(235, 235, 235);
     border-right: 1px solid rgb(235, 235, 235);
+    overflow: scroll;
 
 
     .words-cloud {
-      height: 55%;
-      background-color: rgb(255, 200, 232);
+      min-height: 55%;
 
       .title {
         line-height: 40px;
-        color: #7E7E7E;
         font-weight: bold;
+        margin-bottom: 30px;
       }
     }
 
     .hot-scenes {
-      height: 45%;
-      background-color: rgb(255, 211, 161);
+      min-height: 45%;
 
       .title {
         line-height: 40px;
-        color: #7E7E7E;
         font-weight: bold;
+        margin-bottom: 30px;
       }
     }
   }
@@ -58,6 +56,7 @@
         border-radius: 2px;
         padding: 15px;
         display: flex;
+        cursor: pointer;
 
         .el-image {
           width: 300px;

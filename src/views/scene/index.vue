@@ -14,7 +14,7 @@
       </el-amap>
       <div class="city-info">
         <div class="score">
-          景点综合得分：<span>{{(sceneDetail.heat * 100).toString().slice(0, 4)}}</span>
+          景点综合得分：<span>{{(sceneDetail.heat * 100).toString().slice(0, 4)}}</span>🤡
         </div>
         <div class="notice">
           <span>* </span>{{sceneDetail.note.slice(0, 50)}}
@@ -128,11 +128,11 @@ export default {
     }
   },
   async mounted() {
-    this.barChartData.rows = sceneRankList[this.$route.params.city || '北京']
+    this.barChartData.rows = sceneRankList[localStorage.getItem('city') || '北京']
 
     this.sceneDetail = (await getSceneDetail({
-      sceneName: '故宫',
-      cityName: this.$route.params.city || '北京'
+      sceneName: localStorage.getItem('scene') || '故宫',
+      cityName: localStorage.getItem('city') || '北京'
     })).data
 
     this.circleChartData.rows[0]['value'] = this.sceneDetail.hotwords[2][1] / (this.sceneDetail.hotwords[0][1] + this.sceneDetail.hotwords[1][1] + this.sceneDetail.hotwords[2][1])

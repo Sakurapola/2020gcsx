@@ -107,7 +107,11 @@ export default {
     }
   },
   async created() {
-    this.cityInfo = (await getCityDetail({ cityName: this.$route.params.city || '北京' })).data
+
+    this.cityInfo = (await getCityDetail({ 
+      cityName: localStorage.getItem('city') || '北京' 
+    })).data
+
     this.chartData.rows = this.cityInfo.hotwords.map(item => {
       return {
         word: item[0],
@@ -117,7 +121,7 @@ export default {
 
     this.barChartData.rows = (await getHotList({ 
       type: 'scene',
-      cityName: this.$route.params.city || '北京'
+      cityName: localStorage.getItem('city') || '北京'
     })).data.data
   },
   mounted() {

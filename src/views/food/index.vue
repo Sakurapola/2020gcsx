@@ -64,7 +64,7 @@ export default {
   },
   async mounted() {
     this.foodList = (await getFoods({
-      cityName: '北京',
+      cityName: localStorage.getItem('city'),
       hot: true
     })).data.foodlist
 

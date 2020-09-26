@@ -22,6 +22,8 @@ import VCharts from 'v-charts'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$echarts = echarts
+
 Vue.use(ElementUI)
 // Vue.use(VueAMap)
 Vue.use(VueAMap)

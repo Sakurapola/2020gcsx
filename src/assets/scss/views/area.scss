@@ -7,7 +7,7 @@
     background-color: #fff;
   }
 
-  .heat-map {
+  #heat-map {
     width: 100vw;
     height: 88vh;
   }
@@ -38,7 +38,7 @@
     right: 30px;
     top: 50%;
     transform: translate(0, -50%);
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .8);
     transition: all 1s;
     padding: 15px;
     box-shadow: $basic-shadow;

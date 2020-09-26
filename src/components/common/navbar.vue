@@ -43,10 +43,12 @@
         })
       },
       queryCity() {
-        
+        localStorage.setItem('city', this.city)
+        location.reload()
       },
       queryScene() {
-
+        localStorage.setItem('scene', this.scene)
+        location.reload()
       }
     }
   }

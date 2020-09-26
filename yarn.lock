@@ -2350,6 +2350,11 @@ bluebird@^3.1.1, bluebird@^3.5.5:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
 
+bmaplib@^1.0.1:
+  version "1.0.1"
+  resolved "http://artifactory.intra.ke.com/artifactory/api/npm/npm-virtual/bmaplib/download/bmaplib-1.0.1.tgz#ba98fcc3ac0a17fdf56f97fa5293e5fa5c358aef"
+  integrity sha1-upj8w6wKF/31b5f6UpPl+lw1iu8=
+
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.4.0:
   version "4.11.9"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.9.tgz#26d556829458f9d1e81fc48952493d0ba3507828"

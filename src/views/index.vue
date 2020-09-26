@@ -1,7 +1,7 @@
 <template>
   <div class='index'>
     <h1>国 庆 去 哪 儿 ？</h1>
-    <el-input placeholder="请输入城市名..." v-model="city" class="input-with-select">
+    <el-input placeholder="请输入城市名..." v-model="city" class="input-with-select" @keyup.enter.native="toCityPage">
       <el-button slot="append" icon="el-icon-search" @click="toCityPage"></el-button>
     </el-input>
   </div>
@@ -18,11 +18,9 @@ export default {
   },
   methods: {
     toCityPage() {
+      localStorage.setItem('city', this.city)
       this.$router.push({
-        name: 'city',
-        params: {
-          city: this.city 
-        }
+        name: 'city'
       })
     }
   }

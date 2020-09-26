@@ -11,6 +11,7 @@
         placeholder="请输入您想去的景点......" 
         v-model="scene" 
         class="input-with-select"
+        @keyup.enter.native="queryScene"
       >
         <el-button slot="append" icon="el-icon-search"  @click="queryScene"></el-button>
       </el-input>
@@ -19,6 +20,7 @@
         placeholder="请输入您想去的城市......" 
         v-model="city" 
         class="input-with-select"
+        @keyup.enter.native="queryCity"
       >
         <el-button slot="append" icon="el-icon-search"  @click="queryCity"></el-button>
       </el-input>
@@ -31,7 +33,7 @@
     name: "navbar",
     data() {
       return {
-        activeStatus: 1,
+        activeStatus: 0,
         city: '',
         scene: ''
       }
@@ -49,6 +51,15 @@
       queryScene() {
         localStorage.setItem('scene', this.scene)
         location.reload()
+      }
+    },
+    mounted() {
+      if(this.$route.name === 'scene') {
+        this.activeStatus = 2
+      } else if (this.$route.name === 'area') {
+        this.activeStatus = 3
+      } else {
+        this.activeStatus = 1
       }
     }
   }

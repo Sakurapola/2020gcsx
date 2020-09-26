@@ -137,7 +137,7 @@ export default {
 
     this.circleChartData.rows[0]['value'] = this.sceneDetail.hotwords[2][1] / (this.sceneDetail.hotwords[0][1] + this.sceneDetail.hotwords[1][1] + this.sceneDetail.hotwords[2][1])
 
-    this.center = [121.59996, 31.197646]
+    this.center = this.sceneDetail.location.split(',')
     this.amapManager = new VueAMap.AMapManager()
   }
 }

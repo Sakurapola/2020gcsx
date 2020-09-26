@@ -19,7 +19,7 @@
           <div class="content">
             <div class="title-city">
               <div class="title">{{item.fname}}</div>
-              <div class="city">去 <span @click="toCityPage">北京</span> 吃</div>
+              <div class="city">去 <span @click="toCityPage">{{city}}</span> 吃</div>
             </div>
             <div class="para">{{item.fdesc}}</div>
           </div>
@@ -51,6 +51,7 @@ export default {
         columns: ['name', 'hot'],
         rows: []
       },
+      city: localStorage.getItem('city'),
       foodList: []
     }
   },

@@ -14,7 +14,7 @@
     </div>
     <div class="modal modal-scene" v-if="modal === 2">
       <div class="close" @click="modal = 0">+</div>
-      <div class="title">景点热度排行</div>
+      <div class="title">热门城市景区情况概览</div>
       <ve-radar :data="chartData2"></ve-radar>
     </div>
     <div class="modal modal-5A" v-if="modal === 3">

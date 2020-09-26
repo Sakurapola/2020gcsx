@@ -17,8 +17,8 @@
           城市出游综合得分：<span>{{(cityInfo.score * 100).toString().slice(0, 4)}}</span>🤡
         </div>
         <div class="notice">
-          <span>* </span>{{cityInfo.note}}
-        </div>
+          <span>* 预计十一期间该地区游客较多，可能影响您的出行体验</span>{{cityInfo.note}}
+        </div> 
       </div>
     </section>
     <section class="section-b">
